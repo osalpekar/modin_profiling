@@ -1,5 +1,7 @@
 Instructions to Run:
 
+-1. download the dataset with this: `wget http://noaa-ghcn-pds.s3.amazonaws.com/csv/2017.csv`
+
 0. run `pip install pytest-benchmark` and git-python
 
 1. change the path to the modin repo in prof.py line 6 
