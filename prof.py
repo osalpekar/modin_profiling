@@ -14,7 +14,8 @@ print(sha)
 
 FINAL_HASH = "cccea0bed17349727ba13376ee7cc62ac5619852"
 # TEMP_FINAL_HASH = "5e82c60516bc310a631e6e2f00c02ecd8af33049"
-TEMP_FINAL_HASH = "e071b337e6162422d9d64e5c9a865cd3ae1f65cc"
+# TEMP_FINAL_HASH = "e071b337e6162422d9d64e5c9a865cd3ae1f65cc" # only runs for one commit
+TEMP_FINAL_HASH = "0302c95c91a4178e82edfa8e2fb169a2402fb1b6"
 # START_HASH = ""
 
 # repo.git.checkout(START_HASH)

@@ -21,22 +21,25 @@ nan_data = {
 
 frame_data2 = {"col5": [0], "col6": [1]}
 
-ray_df = pd.read_csv("~/2017.csv")
+# ray_df = pd.read_csv("~/2017.csv")
+ray_df = pd.read_csv("~/Downloads/201710k.csv")
+drop_cols = ["Unnamed: " + str(n) for n in [0,4,5,7]]
+print(ray_df.columns)
+ray_df = ray_df.drop(columns=drop_cols)
+# ray_df = pd.read_csv("~/Downloads/googleplaystore.csv")
 # ray_df = pd.DataFrame(frame_data)
 
-# def test_read_csv(benchmark):
-#     path = "~/2017.csv"
-#     result = benchmark(pd.read_csv, path)
+def test_read_csv(benchmark):
+    path = "~/Downloads/201710k.csv"
+    result = benchmark(pd.read_csv, path)
+    print(result)
 
 def test_sum(benchmark):
     # ray_df = pd.DataFrame(frame_data)
     result = benchmark(pd.DataFrame.sum, ray_df)
 
 def test_fillna(benchmark):
-    result = benchmark(pd.DataFrame.fillna, ray_df, {"col1": 0})
-
-def test_apply(benchmark):
-    result = benchmark(pd.DataFrame.apply, ray_df, lambda x: x + 1)
+    result = benchmark(pd.DataFrame.fillna, ray_df, 0)
 
 def test_add(benchmark):
     result = benchmark(pd.DataFrame.add, ray_df, 1)
